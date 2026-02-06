@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Consulta - Exclusivo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #ffffff;
+            color: #1e1e1e;
+            overflow-x: hidden;
+        }
+
+        /* Card principal com bordas lilás/rosa */
+        .glass-card {
+            background: #ffffff;
+            border: 1px solid rgba(168, 85, 247, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.15);
+        }
+
+        /* Botão com gradiente lilás para rosa */
+        .glow-button {
+            background: linear-gradient(90deg, #9333ea, #ec4899);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(147, 51, 234, 0.2);
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 15px 30px rgba(236, 72, 153, 0.4);
+            transform: scale(1.02);
+        }
+
+        /* Indicador de status pulsante em lilás */
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #9333ea;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px #9333ea;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        /* Fundo com gradiente suave lilás e rosa */
+        .mesh-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% -20%, #f5f3ff 0%, transparent 50%),
+                        radial-gradient(circle at 0% 100%, #fdf2f8 0%, transparent 40%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <div class="mesh-gradient"></div>
+
+    <!-- Navegação -->
+    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto w-full">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center font-bold text-white shadow-lg shadow-purple-200">F</div>
+            <span class="font-bold tracking-tight text-lg uppercase text-slate-800">Feirão <span class="text-purple-600">Nacional</span></span>
+        </div>
+        <div class="bg-white px-4 py-2 rounded-full border border-purple-100 shadow-sm flex items-center gap-3">
+            <span class="status-dot"></span>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-purple-600">Servidor Protegido</span>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Central -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="max-w-md w-full">
+            <div class="glass-card rounded-[2.5rem] p-8 md:p-10 relative overflow-hidden">
+                <!-- Efeito de Luz Lilás Interno -->
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl"></div>
+
+                <div class="text-center relative z-10">
+                    <div class="mb-6 inline-flex bg-purple-50 text-purple-600 text-[10px] font-bold px-4 py-1.5 rounded-full border border-purple-100 uppercase tracking-widest">
+                        Acesso Liberado via CPF
+                    </div>
+                    
+                    <h1 class="text-3xl md:text-4xl font-extrabold mb-4 leading-tight text-slate-900">
+                        Seu desconto está <span class="text-pink-500 italic">expirando.</span>
+                    </h1>
+                    
+                    <p class="text-slate-500 text-sm md:text-base mb-8 leading-relaxed">
+                        Identificamos uma oferta de liquidação vinculada ao seu perfil. A consulta é gratuita e segura.
+                    </p>
+
+                    <!-- Botão de Ação -->
+                    <div class="space-y-4">
+                        <a href="https://6painelacessofeirao.shop/" 
+                           class="glow-button w-full text-white font-bold py-5 px-8 rounded-2xl flex items-center justify-center gap-3 text-lg no-underline uppercase tracking-tighter">
+                            Consultar Agora
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        
+                        <div class="flex items-center justify-center gap-2 text-[10px] text-purple-400 font-bold uppercase tracking-widest">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Resultados em Tempo Real
+                        </div>
+                    </div>
+
+                    <!-- Mini Grid de Info -->
+                    <div class="mt-10 grid grid-cols-3 gap-2 border-t border-slate-50 pt-8">
+                        <div class="text-center">
+                            <p class="text-[9px] font-bold text-slate-400 uppercase mb-1">Taxas</p>
+                            <p class="text-xs font-bold text-slate-800">0.0%</p>
+                        </div>
+                        <div class="text-center border-x border-slate-100">
+                            <p class="text-[9px] font-bold text-slate-400 uppercase mb-1">Prazo</p>
+                            <p class="text-xs font-bold text-slate-800">24h</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-[9px] font-bold text-slate-400 uppercase mb-1">Segurança</p>
+                            <p class="text-xs font-bold text-slate-800">SSL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rodapé de Confiança -->
+            <div class="mt-8 text-center space-y-4">
+                <p class="text-[10px] text-slate-400 font-medium uppercase tracking-[0.2em]">Criptografia de alto nível</p>
+                <div class="flex justify-center gap-4 opacity-30">
+                    <div class="w-10 h-4 bg-purple-100 rounded-sm"></div>
+                    <div class="w-10 h-4 bg-purple-100 rounded-sm"></div>
+                    <div class="w-10 h-4 bg-purple-100 rounded-sm"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="p-6 text-center text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+        Proteção de Dados Conforme LGPD
+    </footer>
+
+</body>
+</html>
